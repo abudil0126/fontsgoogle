@@ -1,0 +1,175 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .navbar-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .navbar-logo__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .navbar-logo {
+        height: 35px;
+      }
+
+      .navbar-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #606060;
+        display: flex;
+        align-items: center;
+
+        span {
+          color: gray;
+        }
+      }
+    }
+
+    .navbar-search__wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 56px;
+      background: #c6e4ee39;
+      border-radius: 50px;
+      padding: 0 15px;
+      margin-left: 25px;
+      margin-right: 75px;
+
+      svg {
+        color: #606060;
+        margin-right: 5px;
+        font-size: 20px;
+      }
+
+      .navbar-search {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        text-indent: 10px;
+        font-size: 16px;
+      }
+
+      .navbar-sort {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        min-width: 130px;
+
+        &:hover {
+          background: lightblue;
+        }
+
+        .navbar-sort__text {
+          display: flex;
+          align-items: center;
+        }
+
+        .navbar-sort__select {
+          border: none;
+          outline: none;
+          background: transparent;
+          min-width: 50px;
+        }
+      }
+    }
+
+    .navbar-bag-button {
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border: none;
+      transition: 0.5s;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+
+      &::after {
+        content: "View selected families";
+        position: absolute;
+        top: 55px;
+        right: -50px;
+        display: flex;
+        width: 160px;
+        padding: 2px 5px;
+        font-size: 1rem;
+        background: #000000b6;
+        border-radius: 5px;
+        font-weight: 500;
+        color: white;
+        transition: opacity 0.3s;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &:hover {
+        background: #f1f1f1;
+
+        svg {
+          opacity: 1.5;
+          transform: translate(0, 0.5px, 0.5px);
+        }
+
+        &::after {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      svg {
+        font-weight: 500;
+        font-size: 24px;
+        transition: 0.1s;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .navbar-filter {
+    margin-top: 1.5rem;
+    background: transparent;
+    border: 1px solid blue;
+    border-radius: 50px;
+    padding: 10px 25px 10px 20px;
+    display: flex;
+    align-items: center;
+    color: blue;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &.open {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      transition: 0.3s;
+
+      &:hover {
+        background: blue;
+        box-shadow: 1px 1px 15px 0px lightblue;
+      }
+    }
+
+    &:hover {
+      background: #add8e63f;
+    }
+  }
+}
